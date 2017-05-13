@@ -1,0 +1,12 @@
+<div class="list-group">
+  <a class="list-group-item" [class.active]="selectedPost===post" *ngFor="let post of postArray | limit:10">
+    <div (click)="showPostBody(post)">{{post.title}}</div>
+  </a>
+</div>
+
+<!--<div class="panel panel-default">
+  <div class="panel-heading">{{selectedPost?.title}}</div>
+  <div class="panel-body">
+    {{selectedPost?.body}}
+  </div>
+</div>-->

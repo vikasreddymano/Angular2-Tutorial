@@ -1,3 +1,66 @@
-<h1>
+<!--<h1>
   {{title}}
 </h1>
+
+<ul>
+    <li>Java</li>
+    <li>Ruby</li>
+    <li>Python</li>
+</ul>
+
+<courses></courses>
+<h1></h1>
+
+
+<div class="highlight" Highlight></div>-->
+
+<!--<highlight class="highlight">Tag selector</highlight>
+
+<div class="highlight">Class selector</div>-->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="flex">
+        <h3>List View</h3>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn" (click)="toggleView('grid')" [ngClass]="{
+            'btn-primary':activeView==='grid',
+            'btn-default':activeView!=='grid'
+            }">
+            <i class="glyphicon glyphicon-th"></i>
+          </button>
+          <button type="button" class="btn btn-default" (click)="toggleView('list')" [ngClass]="{
+            'btn-primary':activeView==='list',
+            'btn-default':activeView!=='list'
+            }">
+            <i class="glyphicon glyphicon-th-list"></i>
+          </button>
+        </div>
+      </div>
+      
+      <list-view *ngIf="activeView==='list'" [posts]="postList"></list-view>
+      <posts *ngIf="activeView==='grid'"  [posts]="postList" (viewDetails)="receivedPost($event)"></posts>
+
+  </div>
+
+  <div class="col-sm-6">
+    <h3>Showing details</h3>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Table View</h3>
+        </div>
+        <div class="panel-body">
+          <h4>ID:{{selectedPost?.id}}</h4>
+          <h4>User Id:{{selectedPost?.userId}}</h4>
+          <strong>Title: {{selectedPost?.title}}</strong>
+          <p> {{selectedPost?.body}}</p>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+
