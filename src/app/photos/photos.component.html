@@ -1,0 +1,14 @@
+<div class="loader" *ngIf="isLoading">
+  <i class="fa fa-spinner fa-3x" aria-hidden="true"></i>
+</div>
+
+<div class="media" *ngFor="let photo of photos">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" [src]="photo.thumbnailUrl" [alt]="photo.title">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{photo.title}}</h4>
+  </div>
+</div>

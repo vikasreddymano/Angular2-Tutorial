@@ -1,0 +1,20 @@
+<div class="loader" *ngIf="isLoading"> 
+  <i class="fa fa-spinner fa-3x" aria-hidden="true"></i>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <th>Post Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Body</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of comments">
+      <td>{{comment.postId}}</td>
+      <td>{{comment.name}}</td>
+      <td>{{comment.email}}</td>
+      <td>{{comment.body}}</td>
+    </tr>
+  </tbody>
+</table>
