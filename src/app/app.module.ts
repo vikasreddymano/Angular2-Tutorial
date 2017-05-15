@@ -14,6 +14,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { AppRoutingModule } from './app.routing';
 import { AlbumsComponent } from './albums/albums.component';
 import { UserService } from './user.service';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserService } from './user.service';
     TitleCasePipe,
     CommentsComponent,
     PhotosComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

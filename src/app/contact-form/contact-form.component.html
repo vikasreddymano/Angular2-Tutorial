@@ -1,0 +1,50 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <div class="form-group">
+    <label>Username:</label>
+    <input type="text" 
+      class="form-control" 
+      name="username" 
+      #username="ngModel" 
+      required
+      minlength="4"
+      (change)="log(username)" ngModel>
+  </div>
+
+  <div *ngIf="username.dirty && username.errors">
+    <div class="alert alert-danger" *ngIf="username.errors.required">
+      Username is required
+    </div>
+    <div class="alert alert-danger" *ngIf="username.errors.minlength">
+      Username should be min {{username.errors.minlength.requiredLength}} characters long
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="comment">comment:</label>
+    <textarea name="comment" 
+      class="form-control" 
+      id="comment" 
+      cols="30" rows="5" 
+      #comment="ngModel" 
+      required
+      ngModel>
+    </textarea>
+
+    <div *ngIf="comment.dirty && comment.errors">
+      <div class="alert alert-danger" *ngIf="comment.errors.required">
+        Username is required
+      </div>
+    </div>
+
+  </div>
+  <p></p>
+
+  <button type="submit" class="btn btn-primary" 
+    [disabled]="!form.valid">Submit</button>
+  
+</form>
+
+<!--<pre>
+  {{form.value | json}}
+</pre>-->

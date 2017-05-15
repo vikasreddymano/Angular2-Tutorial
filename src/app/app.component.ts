@@ -30,9 +30,16 @@ export class AppComponent implements OnInit {
   }
 
   getPosts() {
-        this.http.get('https://jsonplaceholder.typicode.com/posts')
-            .map( resp => resp.json())
-            .subscribe( posts => this.postList = posts)
-    }
+      this.http.get('https://jsonplaceholder.typicode.com/posts')
+          .map( resp => resp.json())
+          .subscribe( posts => this.postList = posts)
+  }
 
+  log(x) {
+    console.log(x);
+  }
+
+  submit(form) {
+    console.log('Submit called : ', form);
+  }
 }
